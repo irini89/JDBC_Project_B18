@@ -22,6 +22,24 @@ public class movingForwardAndBackwarsWithResult {
         rs.previous();
         System.out.println(rs.getString("country_id") + " " +rs.getString("country_name") );
 
-        
+        //moving the cursor freely between row
+     //   rs.previous();
+      //  System.out.println(rs.getString("country_id") + " " +rs.getString("country_name") );
+
+        //moving to the last row directly
+        rs.last(); //this will move the cursor to the last location
+        System.out.println(rs.getString("country_id") + " " +rs.getString("country_name") );
+
+        rs.first();
+        System.out.println(rs.getString("country_id") + " " +rs.getString("country_name") );
+
+        rs.absolute(5); // this will move the cursor directly to the 5th row
+        System.out.println(rs.getString("country_id") + " " +rs.getString("country_name") );
+
+        // how to move to before first row location
+        rs.beforeFirst();
+
+        // how to move to after last row location
+        rs.afterLast();
     }
 }

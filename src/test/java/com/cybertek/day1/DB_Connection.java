@@ -57,6 +57,15 @@ public class DB_Connection {
         System.out.println("second column value using index: --> " + rs.getString(2) );
         System.out.println("second  column value using column_name: --> " + rs.getString("region_name") );
 
+      // order we created
+       // connection --> statement --->  resultSet
+
+        //order when we close
+        //resultSet --> statement -- >connection
+        rs.close();
+        stmnt.close();
+        conn.close();
+
 
         System.out.println("THE END ");
     }
