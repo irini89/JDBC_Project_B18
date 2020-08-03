@@ -1,7 +1,9 @@
 package com.cybertek.day1;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 public class GettingMoreInfoAboutResultSet {
     public static void main(String[] args) throws SQLException {
@@ -32,10 +34,25 @@ public class GettingMoreInfoAboutResultSet {
             System.out.println("Number " + i + " Column name is: " + rsmd.getColumnName(i));
         }
 
+        // store the column names in the list
+        List<String> columnNameLst = new ArrayList<>();
+        for (int i = 1; i <= columnCount ; i++) {
+            columnNameLst.add(rsmd.getColumnName(2));
+            System.out.println("columnNameList = " +columnNameLst);
+
+
+
+        }
+
         // getting column count we need resultSetMetaData object
         //getting row count
         //we will use rs.last() to move to last row then call rs.getRow() method
           // that will be the row count of the entire resultSet
+
+        // ----------cleaning up------
+        rs.close();
+        stmnt.close();
+        conn.close();
 
     }
 }
