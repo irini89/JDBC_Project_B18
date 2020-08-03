@@ -18,7 +18,7 @@ public class DB_Connection {
         // 1521:    port number of your database server ,  usually 1521 for oracle , 3306 for MySql Database
         // XE  :   SID name  unique identifier for the database we are connecting
         //  In a nutshell , see it as a full address of your database you can use to make connection
-        String connectionStr = "jdbc:oracle:thin:@52.71.242.164:1521:XE";
+        String connectionStr = "jdbc:oracle:thin:@54.90.25.217:1521:XE";
         String username = "hr" ;
         String password = "hr" ;
 
@@ -39,6 +39,7 @@ public class DB_Connection {
         rs.next(); // currently we are at the first row
 
         //getting the column data we use  multiple get methods available in ResultSet
+
         //print out region id and region name , both as string
         System.out.println("first column value: --> " + rs.getString(1) );
         System.out.println("first column value: --> " + rs.getString("region_id") );
@@ -46,6 +47,16 @@ public class DB_Connection {
         // printing out second column data
         System.out.println("second column value using index: --> " + rs.getString(2) );
         System.out.println("second  column value using column_name: --> " + rs.getString("region_name") );
+
+        //try to move to the next row and get second row data
+
+        rs.next();
+        System.out.println("first column value: --> " + rs.getString(1) );
+        System.out.println("first column value: --> " + rs.getString("region_id") );
+        // printing out second column data
+        System.out.println("second column value using index: --> " + rs.getString(2) );
+        System.out.println("second  column value using column_name: --> " + rs.getString("region_name") );
+
 
         System.out.println("THE END ");
     }
