@@ -23,7 +23,9 @@ public class IteratingResultSet {
         //create a new class , add connection, statement resultset
         //and try to print out each and everything under countries table
 
-
+        rs.close();
+        stmnt.close();
+        conn.close();
 
     }
 

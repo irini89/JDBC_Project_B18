@@ -41,5 +41,9 @@ public class movingForwardAndBackwarsWithResult {
 
         // how to move to after last row location
         rs.afterLast();
+
+        rs.close();
+        stmnt.close();
+        conn.close();
     }
 }

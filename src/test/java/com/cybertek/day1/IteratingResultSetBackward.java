@@ -40,5 +40,9 @@ public class IteratingResultSetBackward {
         // how do i know which number i am right now at this location
         //get row() method return the row number
         System.out.println("rs.getRow() = " + rs.getRow());
+
+        rs.close();
+        stmnt.close();
+        conn.close();
     }
 }

@@ -42,6 +42,7 @@ public class GettingMoreInfoAboutResultSet {
 
 
 
+
         }
 
         // getting column count we need resultSetMetaData object
